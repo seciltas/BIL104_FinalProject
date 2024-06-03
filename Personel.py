@@ -4,7 +4,7 @@ class Personel:
         self.__ad=ad
         self.__soyad=soyad
         self.__departman=departman
-        self.__maas=departman
+        self.__maas=maas
 
 
     def get_personel_no(self):
@@ -36,3 +36,6 @@ class Personel:
     
     def set_maas(self,maas):
         self.__maas=maas
+
+    def __str__(self):
+        return f"Personel No: {self.get_personel_no()}, Ad: {self.get_ad()}, Soyad: {self.get_soyad()}, Departman: {self.get_departman()}, Maaş: {self.get_maas()}"

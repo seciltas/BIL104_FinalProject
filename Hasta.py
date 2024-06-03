@@ -25,11 +25,11 @@ class Hasta:
     def set_soyad(self,soyad):
         self.__soyad=soyad
 
-    def get_dogum_tarihi(self,dogum_tarihi):
+    def get_dogum_tarihi(self):
         return self.__dogum_tarihi
     
     def set_dogum_tarihi(self,dogum_tarihi):
-        self.__dogum_tarihi=dogum_tarihi
+        self.__dogum_tarihi= dogum_tarihi
 
     def get_hastalik(self):
         return self.__hastalik
@@ -46,7 +46,7 @@ class Hasta:
     
     #__str__ metodu içerisinde hasta bilgileri yazılması
     def __str__(self):
-        return f"Hasta Bilgileri:\n Hasta No:{self.get_hasta_no} Adı:{self.get_ad} Soyadi:{self.set_soyad}, Dogum Tarihi:{self.get_dogum_tarihi}, Hastalık:{self.get_hastalik} Tedavi:{self.get_tedavi}"
+        return f"Hasta Bilgileri:\nHasta No:{self.get_hasta_no()} Adı:{self.get_ad()} Soyadi:{self.get_soyad()}, Dogum Tarihi:{self.get_dogum_tarihi()}, Hastalık:{self.get_hastalik()} Tedavi:{self.get_tedavi()}"
     
     def tedavi_suresi_hesapla(self):
         pass
