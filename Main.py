@@ -4,6 +4,10 @@ from Hemsire import Hemsire
 from Hasta import Hasta
 import pandas as pd
 
+pd.set_option('display.width', 100000)
+pd.set_option('display.max_columns', 20)  # Görüntülenen maksimum sütun sayısını da ayarlayabilirsiniz.
+
+
 try:
     personel1=Personel(1,"Eyşan","TEZCAN","Temizlik",6000)
     personel2=Personel(2,"Cengiz","ATAY","Güvenlik",7700)
@@ -21,9 +25,9 @@ try:
     print(doktor2)
     print(doktor3)
 
-    hemsire1=Hemsire(201, "Melek", "SAĞIROĞLU", "Hemşire", 12000, 40, "Temel İlk Yardım", "Buca Seyfi Demirsoy Devlet Hastanesi")
-    hemsire2=Hemsire(202, "İlhan", "KILIÇ", "Hemşire", 10000, 38, "Yoğun Bakım Sertifikası", "Buca Seyfi Demirsoy Devlet Hastanesi")
-    hemsire3=Hemsire(203, "Delfin", "KAYA", "Hemşire", 9500, 35, "Yoğun Bakım Sertifikası", "Buca Kadın Doğum ve Çocuk Hastalıkları Hastanesi")
+    hemsire1=Hemsire(201, "Melek", "SAĞIROĞLU", "Hemşire", 12000, 40, "Tem. İlk Yard", "Buca Seyfi Demirsoy Devlet Hastanesi")
+    hemsire2=Hemsire(202, "İlhan", "KILIÇ", "Hemşire", 10000, 38, "Yoğ Bak. Sertif.", "Buca Seyfi Demirsoy Devlet Hastanesi")
+    hemsire3=Hemsire(203, "Delfin", "KAYA", "Hemşire", 9500, 35, "Yoğ. Bak. Sertif.", "Buca Kadın Doğum ve Çocuk Hastalıkları Hastanesi")
 
     print("\n")
     print(hemsire1)
@@ -57,6 +61,10 @@ try:
     sutun = ["personel_no", "ad", "soyad", "departman", "maas", "uzmanlik", "deneyim_yili", "hastane", "calisma_saati", "sertifika", "hasta_no", "dogum_tarihi", "hastalik", "tedavi"]
 
     df = pd.DataFrame(data, columns=sutun)
+    
+
+    print("DataFrame=")
+    print(df)
 
     #boş olan değişkene 0 atama
     df.fillna(0)

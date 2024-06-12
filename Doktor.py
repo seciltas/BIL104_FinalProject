@@ -25,7 +25,7 @@ class Doktor(Personel):
     def set_hastane(self, hastane):
         self.__hastane = hastane
 
-    def maas_arttir(self, oran):
+    def maas_arttir(self,oran):
         yeni_maas = self.get_maas() * (1 + oran / 100)
         self.set_maas(yeni_maas)
 
