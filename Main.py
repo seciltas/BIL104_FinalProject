@@ -5,7 +5,7 @@ from Hasta import Hasta
 import pandas as pd
 
 pd.set_option('display.width', 100000)
-pd.set_option('display.max_columns', 20)  # Görüntülenen maksimum sütun sayısını da ayarlayabilirsiniz.
+pd.set_option('display.max_columns', 20)  # Görüntülenen maksimum sütun sayısını da ayarlayabiliriz.
 
 
 try:
