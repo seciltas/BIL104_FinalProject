@@ -77,7 +77,7 @@ try:
     print("5 yıldan fazla deneyime sahip doktorların toplam sayısı:", deneyimli_doktor_sayisi)
 
     # Hasta adına göre DataFrame’i alfabetik olarak sıralama
-    siralanmis_df = df[df["hasta_no"].notna()].sort_values(by=["ad", "soyad"])
+    siralanmis_df = df[(df['hasta_no'].notna()) & (df['hasta_no'] > 0)].sort_values(by=['ad', 'soyad'])
     print("Hasta adına göre alfabetik olarak sıralanmış DataFrame:")
     print(siralanmis_df)
 
