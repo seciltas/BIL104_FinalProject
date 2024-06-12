@@ -1,4 +1,5 @@
 class Hasta:
+    #Initializer metod yazıldı
     def __init__(self,hasta_no,ad,soyad,dogum_tarihi,hastalik,tedavi):
         self.__hasta_no=hasta_no
         self.__ad=ad
@@ -7,6 +8,7 @@ class Hasta:
         self.__hastalik=hastalik
         self.__tedavi=tedavi
 
+    #Get/Set metotları yazıldı
     def get_hasta_no(self):
         return self.__hasta_no
     
@@ -44,7 +46,7 @@ class Hasta:
         self.__tedavi=tedavi
 
     
-    #__str__ metodu içerisinde hasta bilgileri yazılması
+    #__str__ metodu içerisinde hasta bilgileri yazdırıldı
     def __str__(self):
         return f"Hasta Bilgileri:\nHasta No:{self.get_hasta_no()} Adı:{self.get_ad()} Soyadi:{self.get_soyad()}, Dogum Tarihi:{self.get_dogum_tarihi()}, Hastalık:{self.get_hastalik()} Tedavi:{self.get_tedavi()}"
     

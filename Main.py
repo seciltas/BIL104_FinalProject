@@ -9,6 +9,8 @@ pd.set_option('display.max_columns', 20)  # Görüntülenen maksimum sütun say�
 
 
 try:
+
+    #personel, hasta, doktor ve hemşire için nesneler üretildi ve bilgiler __str__ metodu aracılığıyla yazdırıldı
     personel1=Personel(1,"Eyşan","TEZCAN","Temizlik",6000)
     personel2=Personel(2,"Cengiz","ATAY","Güvenlik",7700)
 
@@ -43,9 +45,12 @@ try:
     print(hasta3)
 
 
-
+    
+    #Tüm personel, doktor, hemşire ve hasta nesnelerinin özelliklerinden bir pandas DataFrame oluşturuldu.
+    #(personel_no, ad,soyad, departman, maas, uzmanlik, deneyim_yili,hastane,
+    #calisma_saati, sertifika,hasta_no, dogum_tarihi, hastalik, tedavi)
     data = []
-
+    #Boş oşan değişkenlere 0 atandı.
     for personel in [personel1, personel2]:
         data.append([personel.get_personel_no(), personel.get_ad(), personel.get_soyad(), personel.get_departman(), personel.get_maas(), 0, 0, 0, 0, 0, 0, 0, 0, 0])
 
@@ -66,13 +71,13 @@ try:
     print("DataFrame=")
     print(df)
 
-    #doktorları uzamanlık alanlarına göre gruplama
+    # Doktorları uzmanlık alanlarına göre gruplama ve sayısını yazdırma
     df_uzmanlik=df.groupby("uzmanlik")
     doktor_grup_sayisi = df_uzmanlik.size()
     print("Doktorların uzmanlık alanlarına göre gruplanmış toplam sayısı:")
     print(doktor_grup_sayisi)
    
-    #5 yıldan fazla deneyime sahip doktorların toplam sayısı
+    # 5 yıldan fazla deneyime sahip doktorların toplam sayısı
     deneyimli_doktor_sayisi = df[(df["departman"] == "Doktor") & (df["deneyim_yili"] > 5)].shape[0]
     print("5 yıldan fazla deneyime sahip doktorların toplam sayısı:", deneyimli_doktor_sayisi)
 
@@ -81,11 +86,11 @@ try:
     print("Hasta adına göre alfabetik olarak sıralanmış DataFrame:")
     print(siralanmis_df)
 
-    #maasi 7000 yuksek pers
+    # Maasi 7000 yuksek personeller
     maas_ustunde_personel = df[df["maas"] > 7000]
     print("Maaşı 7000 TL üzerinde olan personeller:")
     print(maas_ustunde_personel) 
-
+    # Doğum tarihi 1990 ve sonrası olan hastalar
     dogum_tarihi_ustunde_hastalar = df[df["dogum_tarihi"].apply(lambda x: int(x.split("-")[0]) if x else 0) >= 1990]
     print("Doğum tarihi 1990 ve sonrası olan hastalar:")
     print(dogum_tarihi_ustunde_hastalar)

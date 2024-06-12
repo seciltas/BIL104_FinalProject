@@ -1,4 +1,5 @@
 class Personel:
+    #Initializer metod yazıldı
     def __init__(self,personel_no,ad,soyad,departman,maas):
         self.__personel_no=personel_no
         self.__ad=ad
@@ -6,7 +7,7 @@ class Personel:
         self.__departman=departman
         self.__maas=maas
 
-
+    #Get/Set metotları yazıldı
     def get_personel_no(self):
         return self.__personel_no
     
@@ -37,5 +38,6 @@ class Personel:
     def set_maas(self,maas):
         self.__maas=maas
 
+    #__str__ metodu içinde personel bilgileri yazdırıldı
     def __str__(self):
         return f"Personel No: {self.get_personel_no()}, Ad: {self.get_ad()}, Soyad: {self.get_soyad()}, Departman: {self.get_departman()}, Maaş: {self.get_maas()}"
