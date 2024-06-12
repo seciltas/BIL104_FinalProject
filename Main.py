@@ -47,16 +47,16 @@ try:
     data = []
 
     for personel in [personel1, personel2]:
-        data.append([personel.get_personel_no(), personel.get_ad(), personel.get_soyad(), personel.get_departman(), personel.get_maas(), None, None, None, None, None, None, None, None, None])
+        data.append([personel.get_personel_no(), personel.get_ad(), personel.get_soyad(), personel.get_departman(), personel.get_maas(), 0, 0, 0, 0, 0, 0, 0, 0, 0])
 
     for doktor in [doktor1, doktor2, doktor3]:
-        data.append([doktor.get_personel_no(), doktor.get_ad(), doktor.get_soyad(), doktor.get_departman(), doktor.get_maas(), doktor.get_uzmanlik(), doktor.get_deneyim_yili(), doktor.get_hastane(), None, None, None, None, None, None])
+        data.append([doktor.get_personel_no(), doktor.get_ad(), doktor.get_soyad(), doktor.get_departman(), doktor.get_maas(), doktor.get_uzmanlik(), doktor.get_deneyim_yili(), doktor.get_hastane(), 0, 0, 0, 0, 0, 0])
 
     for hemsire in [hemsire1, hemsire2, hemsire3]:
-        data.append([hemsire.get_personel_no(), hemsire.get_ad(), hemsire.get_soyad(), hemsire.get_departman(), hemsire.get_maas(), None, None, hemsire.get_hastane(), hemsire.get_calisma_saati(), hemsire.get_sertifika(), None, None, None, None])
+        data.append([hemsire.get_personel_no(), hemsire.get_ad(), hemsire.get_soyad(), hemsire.get_departman(), hemsire.get_maas(), 0, 0, hemsire.get_hastane(), hemsire.get_calisma_saati(), hemsire.get_sertifika(), 0, 0, 0, 0])
 
     for hasta in [hasta1, hasta2, hasta3]:
-        data.append([None, hasta.get_ad(), hasta.get_soyad(), None, None, None, None, None, None, None, hasta.get_hasta_no(), hasta.get_dogum_tarihi(), hasta.get_hastalik(), hasta.get_tedavi()])
+        data.append([0, hasta.get_ad(), hasta.get_soyad(), 0, 0, 0, 0, 0, 0, 0, hasta.get_hasta_no(), hasta.get_dogum_tarihi(), hasta.get_hastalik(), hasta.get_tedavi()])
 
     sutun = ["personel_no", "ad", "soyad", "departman", "maas", "uzmanlik", "deneyim_yili", "hastane", "calisma_saati", "sertifika", "hasta_no", "dogum_tarihi", "hastalik", "tedavi"]
 
@@ -65,9 +65,6 @@ try:
 
     print("DataFrame=")
     print(df)
-
-    #boş olan değişkene 0 atama
-    df.fillna(0)
 
     #doktorları uzamanlık alanlarına göre gruplama
     df_uzmanlik=df.groupby("uzmanlik")
